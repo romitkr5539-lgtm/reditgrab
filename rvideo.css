@@ -2037,3 +2037,113 @@ code {
   20%, 60% { transform: translateX(-6px); }
   40%, 80% { transform: translateX(6px); }
 }
+
+
+
+
+
+
+
+
+    /* ── Two-column content grid ── */
+    .content-cols {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1040px;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+      .content-cols { grid-template-columns: 1fr 1fr; gap: 2rem 3rem; }
+    }
+    .content-cols .content-block { margin-bottom: 0; }
+
+    /* ── Supported link formats list ── */
+    .link-formats-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .link-formats-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .link-formats-list li::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--reddit-orange);
+      flex-shrink: 0;
+      margin-top: 0.52em;
+    }
+
+    /* ── Device cards ── */
+    .device-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 640px) {
+      .device-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .device-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+    }
+    .device-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .device-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; margin: 0; }
+    .device-card a { color: var(--reddit-orange); text-decoration: none; }
+    .device-card a:hover { text-decoration: underline; }
+
+    /* ── Troubleshooting table ── */
+    .trouble-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      margin-top: 1rem;
+    }
+    .trouble-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .trouble-table thead { background-color: var(--bg-card-hover); }
+    .trouble-table th {
+      padding: 0.8rem 1rem;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+    .trouble-table td {
+      padding: 0.85rem 1rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .trouble-table tr:last-child td { border-bottom: none; }
+    .trouble-table tr:nth-child(even) td { background-color: rgba(255,255,255,0.02); }
+    .trouble-table td:first-child { font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+    .trouble-note { margin-top: 1rem; font-size: 0.9rem; color: var(--text-subtle); }
+  

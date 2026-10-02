@@ -30,110 +30,6 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/rvideo.css">
 
-  <style>
-    /* ── Two-column content grid ── */
-    .content-cols {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      max-width: 1040px;
-      margin-bottom: 3rem;
-    }
-    @media (min-width: 768px) {
-      .content-cols { grid-template-columns: 1fr 1fr; gap: 2rem 3rem; }
-    }
-    .content-cols .content-block { margin-bottom: 0; }
-
-    /* ── Supported link formats list ── */
-    .link-formats-list {
-      list-style: none;
-      padding: 0;
-      margin: 0.75rem 0 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .link-formats-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    .link-formats-list li::before {
-      content: "";
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--reddit-orange);
-      flex-shrink: 0;
-      margin-top: 0.52em;
-    }
-
-    /* ── Device cards ── */
-    .device-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-      margin-top: 1rem;
-    }
-    @media (min-width: 640px) {
-      .device-grid { grid-template-columns: 1fr 1fr; }
-    }
-    .device-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem 1.5rem;
-    }
-    .device-card-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.6rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .device-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; margin: 0; }
-    .device-card a { color: var(--reddit-orange); text-decoration: none; }
-    .device-card a:hover { text-decoration: underline; }
-
-    /* ── Troubleshooting table ── */
-    .trouble-table-wrap {
-      overflow-x: auto;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-color);
-      margin-top: 1rem;
-    }
-    .trouble-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    .trouble-table thead { background-color: var(--bg-card-hover); }
-    .trouble-table th {
-      padding: 0.8rem 1rem;
-      text-align: left;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--text-subtle);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border-color);
-      white-space: nowrap;
-    }
-    .trouble-table td {
-      padding: 0.85rem 1rem;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border-subtle);
-      vertical-align: top;
-      line-height: 1.55;
-    }
-    .trouble-table tr:last-child td { border-bottom: none; }
-    .trouble-table tr:nth-child(even) td { background-color: rgba(255,255,255,0.02); }
-    .trouble-table td:first-child { font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
-    .trouble-note { margin-top: 1rem; font-size: 0.9rem; color: var(--text-subtle); }
-  </style>
-
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
@@ -154,7 +50,7 @@
         "description": "Download Reddit videos as MP4 from any public post. Paste a link, preview the video, pick your quality, and save — no account or app required.",
         "inLanguage": "en-US",
         "datePublished": "2026-09-05",
-        "dateModified": "2026-09-05",
+        "dateModified": "2026-09-29",
         "isPartOf": { "@id": "https://reditgrab.com/#website" },
         "about": { "@id": "https://reditgrab.com/#webapplication" }
       },
@@ -279,7 +175,7 @@
     <div class="header-inner container">
       <a href="/" class="brand-link" id="brand-link">
         <div class="brand-icon" aria-hidden="true">
-          <img src="https://reditgrab.com/reditgrab.png" alt="" width="48" height="48">
+          <img src="https://reditgrab.com/reditgrab.png" alt="ReditGrab logo" width="48" height="48">
         </div>
         <span class="brand-text">ReditGrab</span>
       </a>
@@ -357,7 +253,7 @@
         <!-- Downloader Card -->
         <div class="downloader-glow-wrap" id="downloader-glow-wrap">
           <div class="downloader-card" id="downloader-box">
-            <form id="download-form" class="download-form" novalidate>
+            <form id="download-form" class="download-form" novalidate aria-label="Reddit video downloader">
               <div class="input-field-wrapper" id="url-input-container">
                 <span class="input-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
@@ -578,7 +474,7 @@
     <section class="steps-section" id="how-it-works-guide" aria-labelledby="stepsHeading">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title" id="stepsHeading">How to Download Reddit Videos</h2>
+          <h2 class="section-title" id="stepsHeading">How to Download Reddit Videos as MP4</h2>
           <p class="section-subtitle">Copy the link, paste it above, preview and save. Here's what happens at each step.</p>
         </div>
         <div class="steps-grid">
@@ -627,13 +523,13 @@
         <!-- Row 1: What happens + Supported links -->
         <div class="content-cols">
           <div class="content-block">
-            <h2>What Happens When You Click Get Video</h2>
+            <h2>What Happens After You Paste a Reddit Video Link</h2>
             <p>ReditGrab looks up the post's public media information and checks for a Reddit-hosted video. If it finds one, you get a playable preview first — not an instant download. You can confirm it's the clip you meant, check the resolution, and use the unmute button to hear whether it has sound.</p>
             <p>The quality menu lists the versions Reddit has for that post, with the highest one selected by default. When you're happy, Download saves the MP4 through your browser.</p>
           </div>
 
           <div class="content-block">
-            <h2>Supported Reddit Link Formats</h2>
+            <h2>Reddit Video URL Formats That Work</h2>
             <p>Copy the link to the post, not the subreddit. These link shapes all work:</p>
             <ul class="link-formats-list">
               <li><code>reddit.com/r/subreddit/comments/…</code> — standard post links</li>
@@ -641,20 +537,20 @@
               <li><code>redd.it/…</code> — short links from the app's share sheet, expanded automatically</li>
               <li><code>v.redd.it/…</code> — direct video links</li>
             </ul>
-            <p>Crossposts work if the original is a Reddit-hosted video. Photo galleries belong in the <a class="orange-tool-link" href="https://reditgrab.com/reddit-image-downloader">Reddit Image Downloader</a>, profile pictures in the <a class="orange-tool-link" href="https://reditgrab.com/reddit-dp-downloader">Reddit DP Downloader</a>, and videos that are only embeds from YouTube or Streamable aren't hosted by Reddit. Not sure? See <a class="orange-tool-link" href="/blog/choosing-the-right-reddit-link">Choosing the Right Reddit Link</a>.</p>
+            <p>Crossposts work if the original is a Reddit-hosted video. Photo galleries belong in the <a class="orange-tool-link" href="/reddit-image-downloader">Reddit Image Downloader</a>, profile pictures in the <a class="orange-tool-link" href="/reddit-dp-downloader">Reddit DP Downloader</a>, and videos that are only embeds from YouTube or Streamable aren't hosted by Reddit. Not sure? See <a class="orange-tool-link" href="/blog/choosing-the-right-reddit-link">Choosing the Right Reddit Link</a>.</p>
           </div>
         </div>
 
         <!-- Row 2: Sound + Quality -->
         <div class="content-cols">
           <div class="content-block">
-            <h2>Will the Video Have Sound?</h2>
+            <h2>Download Reddit Video With Sound</h2>
             <p>If the original post has audio, usually yes. Reddit stores its videos as separate video and audio files rather than one combined file. That's why some tools give you a silent clip — they grabbed only the picture. ReditGrab requests both tracks when they exist and combines them into one MP4 where it can.</p>
             <p>A saved video can still be silent for two different reasons. The first is that it never had audio: a GIF uploaded as video, a screen recording with the mic off, or a clip with the sound stripped. The second is rarer — the post has an audio track but it couldn't be merged on that attempt. The result card shows which case you're in before you download. Full explanation: <a class="orange-tool-link" href="/blog/why-reddit-videos-have-no-sound">Why Reddit Videos Have No Sound</a>.</p>
           </div>
 
           <div class="content-block">
-            <h2>Quality and File Format</h2>
+            <h2>Reddit Video Quality and MP4 Format</h2>
             <p>You get an MP4. The resolution is whatever Reddit stored for the upload. ReditGrab doesn't upscale, re-compress, or add a watermark. Reddit often keeps several smaller versions of the same video, and each one appears in the quality menu.</p>
             <p>A low-resolution upload only has low-resolution versions — no downloader can sharpen it. Pick the highest version if you plan to keep or edit the clip, and a lower one if storage or mobile data is tight. <a class="orange-tool-link" href="/blog/understanding-reddit-video-resolutions">Understanding Reddit Video Resolutions</a> goes deeper. For a walkthrough, see the <a class="orange-tool-link" href="/blog/how-to-download-reddit-video-mp4">step-by-step download guide</a>.</p>
           </div>
@@ -662,20 +558,20 @@
 
         <!-- Row 3: Device guide (full-width with internal two-col grid) -->
         <div class="content-block" style="max-width: 1040px;">
-          <h2>On Your Phone or Computer</h2>
+          <h2>Save Reddit Videos on iPhone, Android or PC</h2>
           <div class="device-grid">
             <div class="device-card">
-              <p class="device-card-title">
+              <h3 class="device-card-title">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                 Phone
-              </p>
+              </h3>
               <p>Copy the link in the Reddit app, open reditgrab.com in your mobile browser, paste, tap Get Video, then Download. On Android the file goes to your Downloads folder. On iPhone it usually lands in the Files app under Downloads — open it there, tap Share, then Save Video to add it to Photos. Step-by-step guides: <a href="/blog/how-to-save-reddit-video-on-iphone">iPhone</a> · <a href="/blog/how-to-save-reddit-video-on-android">Android</a>.</p>
             </div>
             <div class="device-card">
-              <p class="device-card-title">
+              <h3 class="device-card-title">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                 Computer
-              </p>
+              </h3>
               <p>The flow is the same in any browser on Windows or Mac. Copy the address-bar link, paste, preview, download. The file goes to your browser's download folder. No extension is required. <a href="/blog/can-you-download-reddit-videos-without-an-app">See why you don't need an app</a>.</p>
             </div>
           </div>
@@ -689,7 +585,7 @@
       <div class="container">
 
         <div class="content-block" style="max-width: 1040px;">
-          <h2>When It Doesn't Work</h2>
+          <h2>Reddit Video Downloader Not Working — Fixes</h2>
           <p>Most failures have a specific cause and a clear fix.</p>
           <div class="trouble-table-wrap">
             <table class="trouble-table">
@@ -750,11 +646,11 @@
         <!-- Privacy + Responsible use — two-column -->
         <div class="content-cols" style="margin-bottom: 0;">
           <div class="content-block">
-            <h2>Privacy and How It Works</h2>
+            <h2>How ReditGrab Handles Your Data</h2>
             <p>ReditGrab doesn't ask you to sign in and only handles posts anyone can view. It doesn't intentionally store the videos you download on its servers. Like any online tool, it has to see the link you paste — the <a class="orange-tool-link" href="/privacy">Privacy page</a> has the details. Never enter your Reddit password into a downloader.</p>
           </div>
           <div class="content-block">
-            <h2>Responsible Use</h2>
+            <h2>Legal and Responsible Use of Reddit Videos</h2>
             <p>The videos belong to the people who made them. Saving one to watch offline is different from reposting it, so credit the creator and subreddit if you share it. The rules depend on where you live and what you do with the file — the <a class="orange-tool-link" href="/blog/is-it-legal-to-download-reddit-videos">legal overview</a> covers the basics. ReditGrab is not affiliated with Reddit.</p>
           </div>
         </div>
@@ -762,10 +658,35 @@
       </div>
     </section>
 
+    <!-- ── Limits & Extra Notes ── -->
+    <section class="content-section" id="limits-notes" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div class="content-cols" style="margin-bottom: 0;">
+
+          <div class="content-block">
+            <h2>Reddit Posts This Tool Cannot Download</h2>
+            <ul class="link-formats-list">
+              <li>Private, quarantined or login-only posts</li>
+              <li>Deleted posts</li>
+              <li>Videos embedded from other sites (YouTube, Streamable, etc.)</li>
+              <li>NSFW posts that require an account to view</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h2>Reddit Save Button vs Downloading a File</h2>
+            <p>Reddit's own Save button bookmarks the post inside your Reddit account — it doesn't put a video file on your device, and you lose access if the post is deleted. Downloading through ReditGrab saves the actual MP4 file locally, independent of Reddit.</p>
+            <p>ReditGrab is an independent tool. It is not affiliated with, endorsed by, or associated with Reddit, Inc.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ── FAQ ── -->
     <section class="faq-section" id="faq-section">
       <div class="container">
-        <h2 class="faq-heading">Frequently Asked Questions</h2>
+        <h2 class="faq-heading">Reddit Video Downloader — Common Questions</h2>
         <div class="faq-list">
 
           <div class="faq-item">

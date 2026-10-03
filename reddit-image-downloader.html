@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reddit Image Downloader – Download Images from Reddit</title>
-    <meta name="description" content="Download images from Reddit posts and galleries in high quality. Paste a Reddit URL, preview available images, and save them instantly for free." />
+    <title>Reddit Image Downloader – Save Full-Size Images &amp; Galleries</title>
+    <meta name="description" content="Paste a Reddit post, gallery or i.redd.it link, preview every image, and save the Reddit-hosted file. Free, no login, public posts only." />
     <meta name="author" content="Romit kr Yadav" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://reditgrab.com/reddit-image-downloader" />
@@ -12,14 +12,16 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://reditgrab.com/reddit-image-downloader" />
-    <meta property="og:title" content="Reddit Image Downloader – Download Images from Reddit" />
-    <meta property="og:description" content="Download images from Reddit posts and galleries in high quality. Paste a Reddit URL, preview available images, and save them instantly for free." />
+    <meta property="og:title" content="Reddit Image Downloader – Save Full-Size Images &amp; Galleries" />
+    <meta property="og:description" content="Paste a Reddit post, gallery or i.redd.it link, preview every image, and save the Reddit-hosted file. Free, no login, public posts only." />
     <meta property="og:site_name" content="ReditGrab" />
-    <meta property="author" content="Romit kr Yadav" />
+    <meta property="og:image" content="https://reditgrab.com/reditgrab.png" />
+    <meta property="og:locale" content="en_US" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Reddit Image Downloader – Download Images from Reddit" />
-    <meta name="twitter:description" content="Download images from Reddit posts and galleries in high quality. Paste a Reddit URL, preview available images, and save them instantly for free." />
+    <meta name="twitter:title" content="Reddit Image Downloader – Save Full-Size Images &amp; Galleries" />
+    <meta name="twitter:description" content="Paste a Reddit post, gallery or i.redd.it link, preview every image, and save the Reddit-hosted file. Free, no login, public posts only." />
+    <meta name="twitter:image" content="https://reditgrab.com/reditgrab.png" />
 
     <!-- Theme & Icons -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
@@ -29,115 +31,12 @@
     <link rel="stylesheet" href="/redimg.css" />
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebApplication",
-            "@id": "https://reditgrab.com/reddit-image-downloader#webapplication",
-            "name": "ReditGrab Reddit Image Downloader",
-            "url": "https://reditgrab.com/reddit-image-downloader",
-            "description": "Download images from public Reddit posts and galleries by pasting a Reddit URL, previewing available images, and saving them individually or together.",
-            "applicationCategory": "UtilitiesApplication",
-            "operatingSystem": "Any",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            "publisher": {
-              "@id": "https://reditgrab.com/#organization"
-            }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://reditgrab.com/#organization",
-            "name": "ReditGrab",
-            "url": "https://reditgrab.com/"
-          },
-          {
-            "@type": "BreadcrumbList",
-            "@id": "https://reditgrab.com/reddit-image-downloader#breadcrumb",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://reditgrab.com/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Reddit Image Downloader",
-                "item": "https://reditgrab.com/reddit-image-downloader"
-              }
-            ]
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://reditgrab.com/reddit-image-downloader#faq",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What's the difference between downloading from here vs. right-clicking on Reddit?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Right-clicking on Reddit saves the feed preview — a resized, compressed copy. This tool traces the preview path back to the source file on i.redd.it, which is the actual uploaded version before Reddit scaled it down for the feed."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How many images can I download from a Reddit gallery at once?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Reddit allows up to 20 images per gallery post, and the tool extracts all of them in posting order. The Download All button downloads each file individually — they are not bundled into a ZIP."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What image formats are supported?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The tool downloads whatever format the uploader submitted — JPEG, PNG, GIF, and WebP are all common on Reddit. No conversion happens; the file you save is in the original format Reddit is storing."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I download animated GIFs from Reddit posts?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "It depends on how the post was submitted. Reddit converts many GIFs to MP4 video at upload time — those belong in the Reddit Video Downloader. When a GIF is stored as an actual GIF file on i.redd.it, this tool will fetch and download it as-is."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do I need a Reddit account to download images?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No Reddit account and no ReditGrab account is needed. The tool works purely through public data, reading the same post JSON that any visitor sees when browsing Reddit without being logged in."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Why does a post I can see on Reddit fail to load here?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The post might link to an image on an external host rather than Reddit's own i.redd.it storage. It might be gated behind an age verification requiring login, or Reddit's edge network may be applying temporary rate limits to automated requests."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Does this work with private Reddit posts?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. Posts in private or quarantined subreddits require an authenticated session to read. This tool has no way to authenticate and makes no attempt to work around those restrictions."
-                }
-              }
-            ]
-          }
-        ]
-      }
-    </script>
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","@id":"https://reditgrab.com/reddit-image-downloader#webapplication","name":"ReditGrab Reddit Image Downloader","url":"https://reditgrab.com/reddit-image-downloader","description":"A free web tool that finds images in a public Reddit post, gallery or supported direct image link, previews them, and lets users save the available files separately.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"featureList":["Accepts supported Reddit post, gallery and direct image links","Previews returned images with format and pixel size","Saves individual images or returned gallery images as separate files","No Reddit account required for public content"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://reditgrab.com/#organization"}},
+{"@type":"Organization","@id":"https://reditgrab.com/#organization","name":"ReditGrab","url":"https://reditgrab.com/","logo":"https://reditgrab.com/reditgrab.png"},
+{"@type":"BreadcrumbList","@id":"https://reditgrab.com/reddit-image-downloader#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://reditgrab.com/"},{"@type":"ListItem","position":2,"name":"Reddit Image Downloader","item":"https://reditgrab.com/reddit-image-downloader"}]},
+{"@type":"FAQPage","@id":"https://reditgrab.com/reddit-image-downloader#faq","mainEntity":[{"@type":"Question","name":"How do I download an image from Reddit?","acceptedAnswer":{"@type":"Answer","text":"Copy the Reddit post or supported image URL, paste it into ReditGrab, select Get Images, then choose Download on the image you want. For a gallery, you can use Download All Images."}},{"@type":"Question","name":"Can I download all the images from a Reddit gallery?","acceptedAnswer":{"@type":"Answer","text":"Yes, when the public gallery is successfully retrieved. ReditGrab displays the returned images separately and Download All Images saves them as separate files rather than a ZIP archive."}},{"@type":"Question","name":"Can I download Reddit images in full resolution?","acceptedAnswer":{"@type":"Answer","text":"ReditGrab attempts to retrieve the Reddit-hosted source image rather than relying only on a feed preview. It cannot create detail that Reddit does not store. Check the pixel dimensions shown with the result."}},{"@type":"Question","name":"Does it work with i.redd.it links?","acceptedAnswer":{"@type":"Answer","text":"Yes. Direct i.redd.it image links are supported. The client also handles supported preview.redd.it and reddit.com/media image links."}},{"@type":"Question","name":"Can I download Reddit images on iPhone or Android?","acceptedAnswer":{"@type":"Answer","text":"Yes. ReditGrab works in a mobile browser. The exact save location depends on your browser and device."}},{"@type":"Question","name":"What image formats can I download?","acceptedAnswer":{"@type":"Answer","text":"The downloader recognizes JPEG, PNG, WebP, and GIF files. ReditGrab does not convert them into another format."}},{"@type":"Question","name":"Why did my image download as WebP?","acceptedAnswer":{"@type":"Answer","text":"The available file may be stored as WebP. ReditGrab retrieves the available image rather than converting it. If you need JPG or PNG, convert the file after downloading."}},{"@type":"Question","name":"Why can't I download an image from a Reddit post?","acceptedAnswer":{"@type":"Answer","text":"The post may be unavailable, require access you do not have without logging in, contain external media, contain a video instead of an image, or the downloader backend may be temporarily unreachable."}},{"@type":"Question","name":"Can I download animated GIFs from Reddit?","acceptedAnswer":{"@type":"Answer","text":"If the animation is stored as an actual GIF file, ReditGrab can handle the image file. Many animated Reddit posts are delivered as video instead, which belongs with the Reddit Video Downloader."}},{"@type":"Question","name":"Does ReditGrab download images hosted on other websites?","acceptedAnswer":{"@type":"Answer","text":"The page is designed primarily for Reddit-hosted image media. If the Reddit post only points to an image hosted on another website, the source file needs to be obtained from that host."}},{"@type":"Question","name":"Do I need a Reddit account, and can I use private posts?","acceptedAnswer":{"@type":"Answer","text":"You do not need a Reddit account for publicly accessible content. The tool does not ask for your Reddit password and does not bypass private or login-only access."}}]}
+]}</script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LEBSQ97VK4"></script>
 <script>
@@ -167,7 +66,7 @@
           <a href="https://reditgrab.com/" class="nav-link">Video Downloader</a>
           <a href="https://reditgrab.com/reddit-dp-downloader" class="nav-link">DP Downloader</a>
           <a href="/contact" class="nav-link">Contact</a>
-          <a href="/blog" class="=nav-link">Blog</a>
+          <a href="/blog" class="nav-link">Blog</a>
           <button type="button" class="btn-icon" id="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
             <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="5"></circle>
@@ -221,12 +120,13 @@
     </script>
 
     <main class="main-content" id="main-content">
-      <!-- Hero Downloader Section -->
+      <nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="https://reditgrab.com/">Home</a><span aria-hidden="true">›</span><span>Reddit Image Downloader</span></nav>
+<!-- Hero Downloader Section -->
       <section class="hero-section" id="hero-section">
         <div class="container hero-container">
           <div class="hero-header">
             <h1 class="hero-title">Reddit Image Downloader</h1>
-            <p class="hero-desc">Download images from public Reddit posts and galleries. Preview available files before saving individual images or the full gallery.</p><div style="height: 30px;"></div>
+            <p class="hero-desc">Find images in a public Reddit post, gallery, or supported image link. Preview each file, check its format and pixel size, then save the images you need.</p><div style="height: 30px;"></div>
             <nav class="tool-tabs" aria-label="Downloader tools">
               <a class="tool-tab" href="https://reditgrab.com/" aria-label="Video Downloader" title="Video Downloader">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="14" height="14" rx="2"></rect><path d="m17 10 4-2v8l-4-2z"></path></svg>
@@ -257,7 +157,7 @@
                     id="reddit-url-input"
                     name="redditUrl"
                     class="url-input"
-                    placeholder="Paste Reddit post, gallery, or image URL (reddit.com/r/..., redd.it, or i.redd.it)..."
+                    placeholder="Paste a Reddit post, gallery, or image URL..."
                     autocomplete="off"
                     spellcheck="false"
                     required
@@ -322,7 +222,7 @@
           <div class="results-meta">
             <h2 class="results-title" id="results-title">
               Images Found: <span id="results-count" class="count-badge">0</span>
-            </h2>
+            </div>
             <p class="results-post-title hidden" id="results-post-title"></p>
           </div>
           <div class="results-global-actions">
@@ -424,129 +324,97 @@
         </div>
       </section>
 
-      <!-- Info Content Section (matches index page style) -->
+      <!-- SEO Information Section -->
       <section class="content-section" id="features">
         <div class="container">
           <div class="content-block">
-            <h2>Link Formats This Tool Accepts</h2>
-            <p>You can paste a standard <code>reddit.com/r/…</code> post URL, an <code>old.reddit.com</code> or <code>new.reddit.com</code> link, a <code>redd.it</code> short link, or — if you already have it — the direct <code>i.redd.it</code> image URL copied from a Reddit post. All of those resolve to the same underlying post data. The tool handles the redirect chain automatically, so you don't need to expand short links manually before pasting. For a full breakdown of every URL format, see <a href="/blog/choosing-the-right-reddit-link" class="orange-tool-link">Choosing the Right Reddit Link</a>.</p>
-            <p>The only hard requirement is that the post is publicly viewable — no account, no subscription, no NSFW age-gate that requires a Reddit login to pass. Read more about <a href="/blog/what-public-reddit-media-means" class="orange-tool-link">what "public" means on Reddit</a>.</p>
+            <h2>Which Reddit link should you paste?</h2>
+            <p>A Reddit post URL is usually the easiest option, especially for galleries. ReditGrab can also handle supported direct Reddit image links, including <code>i.redd.it</code>. Supported preview and media links can be resolved to the image file before it is displayed.</p>
+            <div class="info-table-wrap"><table class="info-table"><thead><tr><th>Link type</th><th>Example</th><th>What happens</th></tr></thead><tbody>
+              <tr><td>Reddit post</td><td><code>reddit.com/r/.../comments/...</code></td><td>ReditGrab looks for images in the public post.</td></tr>
+              <tr><td>Gallery</td><td><code>reddit.com/gallery/...</code></td><td>Returned gallery images appear as separate cards.</td></tr>
+              <tr><td>Short link</td><td><code>redd.it/...</code></td><td>Handled as a Reddit link when the backend resolves it.</td></tr>
+              <tr><td>Direct image</td><td><code>i.redd.it/...jpg</code></td><td>Loads the image directly without a post lookup.</td></tr>
+              <tr><td>Preview link</td><td><code>preview.redd.it/...</code></td><td>ReditGrab attempts to resolve the matching Reddit-hosted image.</td></tr>
+            </tbody></table></div>
           </div>
 
           <div class="content-block">
-            <h2>Single Images vs. Reddit Gallery Posts</h2>
-            <p>Behaviour differs based on the post type, and the tool handles both automatically. A standard post with one attached photo returns a single preview card showing the image dimensions, format, and a direct download button.</p>
-            <p>A Reddit gallery — a post with multiple photos stacked in a swipeable carousel — shows all images in the order they appear in the post, each as its own card. Galleries on Reddit can contain up to 20 images. Every card has an individual download button, and a "Download All" button at the top of the results panel lets you save the entire set with one click. Nothing is batched into a ZIP — each file downloads separately so you keep individual filenames and formats. For the complete walkthrough, see <a href="/blog/download-reddit-images-and-galleries" class="orange-tool-link">How to Download Reddit Images and Galleries</a>. If you're curious about how gallery posts work on Reddit's side — the carousel format, URL structure, and limits — <a href="/blog/reddit-gallery-post-explained" class="orange-tool-link">this explains it</a>.</p>
+            <h2>See the image before you save it</h2>
+            <p>When a post contains several images, downloading blindly is inconvenient. ReditGrab gives each returned image its own preview, format label, and pixel dimensions. Open a card to use the full-screen viewer, move through a gallery, inspect the available size, or download the image currently on screen.</p>
           </div>
 
           <div class="content-block">
-            <h2>Why the Quality Is Different From a Right-Click Save</h2>
-            <p>When Reddit displays images in a feed or post page, the browser loads a resized responsive preview rather than the source file. Right-clicking and saving that image gives you Reddit's compressed preview copy, typically at a lower resolution with more JPEG compression than the original.</p>
-            <p>This tool bypasses the preview layer by resolving the path directly to Reddit's stored <code>i.redd.it</code> source file. That's the highest-quality version Reddit holds — the one that was uploaded, not the one optimized for fast feed loading. The ceiling is still whatever the original poster uploaded; the tool retrieves the best Reddit has, not a fabricated higher resolution. See <a href="/blog/download-reddit-images-and-galleries" class="orange-tool-link">our image download guide</a> for a full explanation of how this works. If you want the technical detail on exactly how Reddit compresses images at upload and again for previews, <a href="/blog/does-reddit-compress-images" class="orange-tool-link">this post breaks it down</a>.</p>
+            <h2>Full-size Reddit images: what that actually means</h2>
+            <p>Reddit can show a smaller preview while you browse. When ReditGrab can resolve the Reddit-hosted source, it attempts to use that file instead of treating the feed preview as the final image.</p>
+            <h3>Full size does not mean enhanced</h3>
+            <p>The best available file cannot contain detail that was never uploaded. ReditGrab does not upscale, sharpen, or enhance images. Use the pixel dimensions shown with each result as the practical check for what you are downloading.</p>
           </div>
 
           <div class="content-block">
-            <h2>File Formats You'll Get</h2>
-            <p>Reddit accepts JPEG, PNG, GIF, and WebP image uploads. The format of your downloaded file matches the format of the original upload — the tool doesn't convert between formats. Each preview card displays the format label alongside the pixel dimensions so you know what you're getting before you click download. If you need a different format, that conversion would need to happen after saving the file.</p>
+            <h2>Downloading a Reddit gallery</h2>
+            <p>A gallery puts multiple images inside one Reddit post. Paste the gallery or post URL and review the image cards ReditGrab returns.</p>
+            <ul class="steps-list"><li>Use an individual <strong>Download</strong> button for selected images.</li><li>Use <strong>Download All Images</strong> when you want every returned image.</li><li>Each download is a separate file; ReditGrab does not create a ZIP archive.</li></ul>
+            <p>Gallery results depend on what the downloader backend can retrieve from the public Reddit post. If the content is a video, use the <a href="https://reditgrab.com/" class="orange-tool-link">Reddit Video Downloader</a>.</p>
           </div>
 
           <div class="content-block">
-            <h2>Posts This Tool Can't Process</h2>
-            <ul class="steps-list">
-              <li>Posts from private or quarantined subreddits — these require a Reddit login to view and cannot be accessed through public data channels.</li>
-              <li>Posts that have been deleted by the author or removed by moderators.</li>
-              <li>Images hosted on external sites (Imgur, Flickr, external CDNs) rather than <code>i.redd.it</code> — Reddit only stores the link, not the file.</li>
-              <li>Reddit video posts at <code>v.redd.it</code> — those are handled by the <a href="https://reditgrab.com/">Reddit Video Downloader</a>.</li>
-              <li>Reddit profile pictures — use the <a href="https://reditgrab.com/reddit-dp-downloader">Reddit DP Downloader</a> for those.</li>
-            </ul>
-            <p>When a post falls into any of these categories, the tool surfaces a specific reason rather than a vague failure message. For a full breakdown of what counts as public content on Reddit, read <a href="/blog/what-public-reddit-media-means" class="orange-tool-link">What "Public Reddit Media" Actually Means</a>.</p>
+            <h2>What image format will you get?</h2>
+            <p>ReditGrab does not convert images. It recognizes common Reddit image formats such as JPEG, PNG, WebP, and GIF and uses the available file format for the download.</p>
+            <p>If you need JPG or PNG conversion from a WebP, that is a separate task after downloading.</p>
           </div>
 
           <div class="content-block">
-            <h2>The Lightbox Preview</h2>
-            <p>Before downloading, you can click any image card to open it in a full-screen lightbox. The lightbox shows the image at its actual resolution, displays the pixel dimensions and format in the header, and lets you navigate between images in a gallery using arrow buttons or keyboard arrow keys. You can download directly from the lightbox or open the raw file URL in a new tab. Press Escape or click outside the image to close it. On mobile the workflow is essentially the same — the <a href="/blog/how-to-save-reddit-images-on-mobile" class="orange-tool-link">mobile guide for saving Reddit images</a> has the step-by-step for both iPhone and Android.</p>
+            <h2>Reddit-hosted images vs. outside websites</h2>
+            <p>An image shown inside a Reddit post is not necessarily hosted by Reddit. A Reddit-hosted upload normally has an <code>i.redd.it</code> source, while a post can also point to another domain.</p>
+            <p>ReditGrab is primarily designed around Reddit-hosted image media. If the post only points to another website, the source file needs to be obtained from that host.</p>
+          </div>
+
+          <div class="content-block">
+            <h2>Saving Reddit images on iPhone and Android</h2>
+            <p>Copy the Reddit link, open ReditGrab in your phone's browser, paste it, select <strong>Get Images</strong>, and use the download control on the image you want.</p>
+            <h3>iPhone and iPad</h3><p>Safari normally places downloaded files in the Files app. From there, the Share menu can save a supported image to Photos. Browser behavior can vary by iOS version.</p>
+            <h3>Android</h3><p>Chrome and other Android browsers normally place downloaded files in Downloads. If the browser opens the image instead, use its own save option.</p>
+          </div>
+
+          <div class="content-block">
+            <h2>If a Reddit image won't download</h2>
+            <ul class="steps-list"><li><strong>No images found:</strong> the post may contain no Reddit-hosted image, may be a video, or may no longer be available.</li><li><strong>The post opens on Reddit but not here:</strong> it may require access that the downloader cannot use without a login.</li><li><strong>Download opens a new tab:</strong> your browser may have blocked the direct file download; save the opened image using the browser.</li><li><strong>Download All misses files:</strong> your browser may restrict multiple downloads. Allow downloads for ReditGrab or save the missing cards individually.</li><li><strong>The image is smaller than expected:</strong> check the displayed pixel dimensions and try the direct Reddit image URL when available.</li></ul>
+          </div>
+
+          <div class="content-block">
+            <h2>What ReditGrab does not do</h2>
+            <ul class="steps-list"><li>It does not require or request your Reddit password.</li><li>It does not bypass private Reddit content or login restrictions.</li><li>It does not convert, upscale, sharpen, or enhance downloaded images.</li><li>It does not create ZIP archives for gallery downloads.</li><li>It is not intended for downloading an entire subreddit or a user's complete post history.</li><li>Reddit video posts belong in the <a href="https://reditgrab.com/" class="orange-tool-link">Reddit Video Downloader</a>.</li><li>Reddit profile pictures belong in the <a href="/reddit-dp-downloader" class="orange-tool-link">Reddit DP Downloader</a>.</li></ul>
+          </div>
+
+          <div class="content-block">
+            <h2>Privacy, rights and responsible use</h2>
+            <p>ReditGrab is an independent service and is not affiliated with, endorsed by, or sponsored by Reddit, Inc. It does not ask you for a Reddit login to use the downloader.</p>
+            <p>Only use downloaded images in ways you have the right to use. Copyright and licensing can apply to images posted on Reddit. See the <a href="/privacy" class="orange-tool-link">Privacy Policy</a> and <a href="/disclaimer" class="orange-tool-link">Disclaimer</a> for site-specific information.</p>
           </div>
         </div>
       </section>
 
       <!-- Informational Section: FAQ -->
       <section class="content-section" id="faq">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-desc">Practical answers about image formats, gallery support, and how the tool works under the hood.</p>
-        </div>
-
+        <div class="section-header"><h2 class="section-title">Reddit image downloader questions</h2><p class="section-desc">Straight answers about Reddit image links, galleries, formats, quality, and common download problems.</p></div>
         <div class="faq-accordion" id="faq-accordion">
-          <details class="faq-item" open>
-            <summary class="faq-question">
-              <span>What's the difference between downloading from here vs. right-clicking on Reddit?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-answer">
-              <p>Right-clicking an image on Reddit saves the feed preview — a resized, more compressed copy Reddit loads for fast browsing. This tool traces the preview path back to the source file on <code>i.redd.it</code>, which is the actual uploaded version before Reddit scaled it down for the feed. The difference is most visible on high-resolution photos.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>How many images can I download from a Reddit gallery at once?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-answer">
-              <p>Reddit allows up to 20 images per gallery post, and the tool extracts all of them in the original posting order. The "Download All" button downloads each file individually — they aren't bundled into a ZIP, so each image arrives as its own file with a clean filename. If a gallery post has fewer than 20 images, only those are shown.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>What image formats are supported?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-answer">
-              <p>The tool downloads whatever format the uploader submitted — JPEG, PNG, GIF, and WebP are all common on Reddit. The format is shown on each preview card before you download. No conversion happens; the file you save is in the original format Reddit is storing.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Can I download animated GIFs from Reddit posts?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-answer">
-              <p>It depends on how the post was submitted. Reddit converts many GIFs to MP4 video at upload time to reduce file size — those end up as video posts at <code>v.redd.it</code>, not image posts, and belong in the <a href="https://reditgrab.com/">Reddit Video Downloader</a>. When a GIF is stored as an actual GIF file on <code>i.redd.it</code>, this tool will fetch and download it as-is.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Do I need a Reddit account to download images?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-answer">
-              <p>No Reddit account and no ReditGrab account is needed. The tool works purely through public data — it reads the same post JSON that any visitor sees when browsing Reddit without being logged in. If a post is publicly viewable, it can be fetched here.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Why does a post I can see on Reddit fail to load here?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-answer">
-              <p>A few things can cause this. The post might link to an image on an external host rather than Reddit's own <code>i.redd.it</code> storage — Reddit only holds the link, not the file, so there's nothing to fetch. The post might be gated behind an age verification that requires you to be logged in, even though it's technically public. Or Reddit's edge network may be applying temporary rate limits to automated requests from certain IP ranges, in which case retrying after a short wait usually resolves it.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Does this work with private Reddit posts?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-answer">
-              <p>No. Posts in private or quarantined subreddits sit behind Reddit's access controls and require an authenticated session to read. This tool has no way to authenticate as you and makes no attempt to work around those restrictions — the same privacy rules that Reddit enforces apply here.</p>
-            </div>
-          </details>
+          <details class="faq-item" open><summary class="faq-question"><span>How do I download an image from Reddit?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>Copy the Reddit post or supported image URL, paste it into ReditGrab, select Get Images, then choose Download on the image you want. For a gallery, you can use Download All Images.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Can I download all the images from a Reddit gallery?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>Yes, when the public gallery is successfully retrieved. ReditGrab displays the returned images separately and Download All Images saves them as separate files rather than a ZIP archive.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Can I download Reddit images in full resolution?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>ReditGrab attempts to retrieve the Reddit-hosted source image rather than relying only on a feed preview. It cannot create detail that Reddit does not store. Check the pixel dimensions shown with the result.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Does it work with i.redd.it links?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>Yes. Direct i.redd.it image links are supported. The client also handles supported preview.redd.it and reddit.com/media image links.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Can I download Reddit images on iPhone or Android?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>Yes. ReditGrab works in a mobile browser. The exact save location depends on your browser and device.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>What image formats can I download?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>The downloader recognizes JPEG, PNG, WebP, and GIF files. ReditGrab does not convert them into another format.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Why did my image download as WebP?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>The available file may be stored as WebP. ReditGrab retrieves the available image rather than converting it. If you need JPG or PNG, convert the file after downloading.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Why can't I download an image from a Reddit post?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>The post may be unavailable, require access you do not have without logging in, contain external media, contain a video instead of an image, or the downloader backend may be temporarily unreachable.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Can I download animated GIFs from Reddit?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>If the animation is stored as an actual GIF file, ReditGrab can handle the image file. Many animated Reddit posts are delivered as video instead, which belongs with the Reddit Video Downloader.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Does ReditGrab download images hosted on other websites?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>The page is designed primarily for Reddit-hosted image media. If the Reddit post only points to an image hosted on another website, the source file needs to be obtained from that host.</p></div></details>
+          <details class="faq-item"><summary class="faq-question"><span>Do I need a Reddit account, and can I use private posts?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-answer"><p>You do not need a Reddit account for publicly accessible content. The tool does not ask for your Reddit password and does not bypass private or login-only access.</p></div></details>
         </div>
+      </section>
+
+      <section class="content-section" id="related-guides">
+        <div class="container"><div class="content-block"><h2>Related tools and guides</h2><p>Need a different Reddit download task?</p><ul class="steps-list"><li><a href="https://reditgrab.com/" class="orange-tool-link">Reddit Video Downloader</a> for Reddit video posts.</li><li><a href="/reddit-dp-downloader" class="orange-tool-link">Reddit DP Downloader</a> for profile pictures and avatars.</li><li><a href="/blog/download-reddit-images-and-galleries" class="orange-tool-link">How to download Reddit images and galleries</a> for a longer guide.</li><li><a href="/about" class="orange-tool-link">About ReditGrab</a> to learn about the project.</li></ul></div></div>
       </section>
 
     </main>
@@ -597,7 +465,7 @@
           
           <div class="modal-image-wrapper">
             <div class="modal-loading-spinner" id="modal-spinner" aria-hidden="true"></div>
-            <img id="modal-image" src="" alt="High resolution preview from Reddit post" referrerpolicy="no-referrer" />
+            <img id="modal-image" src="" alt="Reddit image preview" referrerpolicy="no-referrer" />
           </div>
 
           <button type="button" id="modal-next-btn" class="modal-nav-btn next hidden" aria-label="Next image">
@@ -614,19 +482,19 @@
       <div class="container footer-inner">
         <div class="footer-links-grid">
           <div class="footer-link-group">
-            <h2 class="footer-link-title">Other Tools</h2>
+            <div class="footer-link-title">Other Tools</div>
             <a href="https://threadsgrab.com/threads-image-downloader">threads Image Downloader</a>
             <a href="https://fbviddl.com/facebook-image-downloader">Facebook Image Downloader</a>
             <a href="https://twitter.threadsgrab.com/twitter-image-downloader">Twitter Image Downloader</a>
             <a href="https://pinviddl.com/">Pinterest Video Downloader</a>
           </div>
           <div class="footer-link-group">
-            <h2 class="footer-link-title">Legal</h2>
+            <div class="footer-link-title">Legal</div>
             <a href="/privacy">Privacy</a>
             <a href="/disclaimer">Disclaimer</a>
           </div>
           <div class="footer-link-group">
-            <h2 class="footer-link-title">Company</h2>
+            <div class="footer-link-title">Company</div>
             <a href="/about">About ReditGrab</a>
             <a href="/contact">Contact</a>
           </div>

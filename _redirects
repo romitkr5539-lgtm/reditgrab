@@ -1,0 +1,13 @@
+# Canonical URL redirects for legacy and .html variants
+/reddit-video / 301
+/reddit-video.html / 301
+/reddit-image-downloader.html /reddit-image-downloader 301
+/reddit-dp-downloader.html /reddit-dp-downloader 301
+/download-reddit-image /reddit-image-downloader 301
+/download-reddit-image.html /reddit-image-downloader 301
+/about.html /about 301
+/contact.html /contact 301
+/developer.html /developer 301
+/privacy.html /privacy 301
+/disclaimer.html /disclaimer 301
+/blog.html /blog 301
